@@ -13,3 +13,6 @@ class Track:
     def distancie(self, other_Track):
         delta_x = self.x -other_Track.x
         delta_y = self.y -other_Track.y
+        
+        return (delta_x**2 + delta_y**2)**0.5
+    
