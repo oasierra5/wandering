@@ -4,22 +4,22 @@ from Location import Location
 
 from bokeh.plotting import figure, output_file, show
 
-def Walking(Location, Wandering, Steps):
-    beginning = Location.get_Location(Wandering)
+def Walking(location, wandering, steps):
+    beginning = location.get_Location(wandering)
     
-    for _ in range(Steps):
-        Location.move_Wandering(Wandering)
-    return beginning.Distance(Location.get_Location(Wandering))
+    for _ in range(steps):
+        location.move_Wandering(wandering)
+    return beginning.distance(location.get_Location(wandering))
         
 def simulate_Walk(Steps, number_attemps, type_Wandering):
-    Wandering = type_Wandering(name='Alirio')
-    origen = Location(0, 0)
+    wandering = type_Wandering(name='Alirio')
+    origen = Track(0, 0)
     Distances = []
     
     for _ in range(number_attemps):
-        Track = Track
-        Track.add_Wandering(Wandering, origen)
-        simulations_Walk = Walking(Track, Wandering, Steps)
+        location = Location()
+        location.add_Wandering(wandering, origen)
+        simulations_Walk = Walking(location, wandering, Steps)
         Distances.append(round(simulations_Walk, 1))
     return Distances
 
@@ -43,7 +43,7 @@ def main(distances_Walk, number_attemps, type_Wandering):
         print(f'Min = {min_distances}')  
     graph(distances_Walk, average_walking_distance)
     
-    if __name__ == '__main__':
-        distances_Walk = [10, 100, 1000, 10000]
-        number_attemps = 100
-        main(distances_Walk, number_attemps, ComunWandering)
+if __name__ == '__main__':
+    distances_Walk = [10, 100, 1000, 10000]
+    number_attemps = 100
+    main(distances_Walk, number_attemps, ComunWandering)
