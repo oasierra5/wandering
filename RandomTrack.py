@@ -25,7 +25,7 @@ def simulate_Walk(Steps, number_attemps, type_Wandering):
 
 def graph(x,y):
     graphics = figure(title='Camino del errante', x_axis_label='Pasos', y_axis_label='Distancia')
-    graphics.line(x, y, legend='Distancia')
+    graphics.line(x, y, legend_label='Distancia')
     show(graphics)
     
 def main(distances_Walk, number_attemps, type_Wandering):
