@@ -30,7 +30,7 @@ class RightWandering(Wandering):
         super().__init__(name)
 
     def walk(self):
-        dx, dy =  random.choice([(0,5), (5,0), (-1,0), (0, -1)])
+        dx, dy =  random.choice([(0,5), (5,0), (-1,0), (0,-1)])
         self.x += dx
         self.y += dy
         return [dx, dy]
@@ -41,7 +41,7 @@ class LeftWandering(Wandering):
         super().__init__(name)
 
     def walk(self):
-        dx, dy =  random.choice([(0,1), (1,0), (-5,0), (0, -5)])
+        dx, dy =  random.choice([(0,1), (1,0), (-2,0), (0,-2)])
         self.x += dx
         self.y += dy
         return [dx, dy]
